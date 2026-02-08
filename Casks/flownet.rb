@@ -20,7 +20,7 @@ cask "flownet" do
 
   postflight do
     plist_path = "/Library/LaunchDaemons/com.whaleyshire.flownet.plist"
-    daemon_path = "/opt/homebrew/bin/flownet"
+    daemon_path = "#{HOMEBREW_PREFIX}/bin/flownet"
     log_path = "/var/log/flownet.log"
 
     plist_content = <<~PLIST
