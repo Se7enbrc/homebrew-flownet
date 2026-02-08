@@ -82,17 +82,8 @@ cask "flownet" do
                    sudo: true
   end
 
-  uninstall_preflight do
-    system_command "/usr/bin/sudo",
-                   args: ["launchctl", "bootout", "system/com.whaleyshire.flownet"],
-                   sudo: true,
-                   print_stderr: false
-  rescue StandardError
-    # Ignore errors if service isn't running
-    nil
-  end
-
-  uninstall delete: "/Library/LaunchDaemons/com.whaleyshire.flownet.plist"
+  uninstall launchctl: "com.whaleyshire.flownet",
+            delete:    "/Library/LaunchDaemons/com.whaleyshire.flownet.plist"
 
   caveats <<~EOS
     FlowNet is now running and will start automatically at boot.
