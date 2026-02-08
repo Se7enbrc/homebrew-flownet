@@ -1,8 +1,8 @@
 cask "flownet" do
-  version "1.1.0"
-  sha256 "8a931bea8120d92827ff38dea20372f8af1f793bcd752b1261c24debd87f464a"
+  version "2026.02.0"
+  sha256 "9b91a5dcc52ad033b6628d7834e0a89024bf1606557bc761d126fca7fb57862d"
 
-  url "https://github.com/Se7enbrc/flownet/archive/refs/tags/v#{version}.tar.gz"
+  url "https://github.com/Se7enbrc/flownet/archive/refs/tags/#{version}.tar.gz"
   name "FlowNet"
   desc "AWDL suppression daemon for optimized WiFi performance"
   homepage "https://github.com/Se7enbrc/flownet"
