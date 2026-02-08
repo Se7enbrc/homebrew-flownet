@@ -1,6 +1,6 @@
 cask "flownet" do
-  version "1.0.1"
-  sha256 "fa252b811dfc1c1bbb2200d463cd968b8e63edea4f054a908eb5dc83f13908d3"
+  version "1.1.0"
+  sha256 "8a931bea8120d92827ff38dea20372f8af1f793bcd752b1261c24debd87f464a"
 
   url "https://github.com/Se7enbrc/flownet/archive/refs/tags/v#{version}.tar.gz"
   name "FlowNet"
