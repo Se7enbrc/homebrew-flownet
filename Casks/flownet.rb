@@ -1,5 +1,5 @@
 cask "flownet" do
-  version "1.0.1"
+  version "1.0.2"
   sha256 "fa252b811dfc1c1bbb2200d463cd968b8e63edea4f054a908eb5dc83f13908d3"
 
   url "https://github.com/Se7enbrc/flownet/archive/refs/tags/v#{version}.tar.gz"
@@ -85,7 +85,11 @@ cask "flownet" do
   uninstall_preflight do
     system_command "/usr/bin/sudo",
                    args: ["launchctl", "bootout", "system/com.whaleyshire.flownet"],
-                   sudo: true
+                   sudo: true,
+                   print_stderr: false
+  rescue StandardError
+    # Ignore errors if service isn't running
+    nil
   end
 
   uninstall delete: "/Library/LaunchDaemons/com.whaleyshire.flownet.plist"
