@@ -83,13 +83,7 @@ cask "flownet" do
   end
 
   uninstall_preflight do
-    begin
-      system_command "/usr/bin/sudo",
-                     args: ["launchctl", "bootout", "system/com.whaleyshire.flownet"],
-                     sudo: true
-    rescue
-      # Ignore if service isn't running
-    end
+    system "/usr/bin/sudo /bin/launchctl bootout system/com.whaleyshire.flownet 2>/dev/null || true"
   end
 
   uninstall delete: "/Library/LaunchDaemons/com.whaleyshire.flownet.plist"
